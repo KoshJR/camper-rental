@@ -1,30 +1,121 @@
-.listItem {
+.campList {
   width: 888px;
   display: flex;
-  border-radius: 20px;
-  border: solid 1px black;
-  padding: 24px;
-}
-
-.itemInfo {
-  padding: 0 24px 0 24px;
-  display: flex;
   flex-direction: column;
+  gap: 32px;
 }
 
-.cartTitle {
+.listItem {
   display: flex;
-  flex-direction: row;
-}
-.itemName {
-}
-
-.favoriteBtn {
+  gap: 24px;
+  border-radius: 20px;
+  padding: 24px;
+  border: 1px solid rgba(16, 24, 40, 0.2);
 }
 
 .itemImg {
   width: 290px;
   height: 310px;
-  object-fit: cover;
   border-radius: 10px;
+  object-fit: cover;
+}
+
+.itemInfo {
+  width: 526px;
+}
+
+.itemTitle {
+  display: flex;
+  justify-content: space-between;
+}
+
+.itemName {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--primary-color-black);
+  margin-bottom: 8px;
+}
+
+.itemPriceNBtn {
+  display: flex;
+}
+
+.itemPrice {
+  font-family: "Inter", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--primary-color-black);
+  margin-right: 11px;
+}
+
+.itemRating {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 24px;
+}
+
+.ratingNReviews {
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+  text-decoration: underline;
+  color: var(--primary-color-black);
+}
+
+.itemLocation {
+  display: flex;
+  align-items: center;
+  margin-left: 16px;
+}
+
+.itemDescription {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--primary-color-grey);
+  width: 525px;
+  height: 24px;
+  overflow: hidden;
+}
+
+.itemDetails {
+  display: flex;
+  margin-top: 24px;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.itemDetail {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 12px 18px;
+  border-radius: 100px;
+  background-color: var(--secondary-color-white);
+}
+
+.detail {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--primary-color-black);
+}
+
+.showMore {
+  width: 166px;
+  height: 56px;
+  border-radius: 200px;
+  padding: 16px 40px;
+  background-color: var(--primary-color-red);
+  margin-top: 24px;
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: #fff;
 }

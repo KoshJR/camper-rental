@@ -27,21 +27,21 @@ const AdvertsList = ({ array }) => {
                 <div className={css.itemPriceNBtn}>
                   <span className={css.itemPrice}>{price}</span>
                   <button className={css.favoriteBtn}>
-                    <svg className={css.favoriteSvg}>
+                    <svg width={30} height={30} className={css.favoriteSvg}>
                       <use></use>
                     </svg>
                   </button>
                 </div>
               </div>
               <div className={css.itemRating}>
-                <svg className={css.ratingSvg}>
+                <svg width={16} height={16} className={css.ratingSvg}>
                   <use></use>
                 </svg>
                 <span
                   className={css.ratingNReviews}
-                >{`${rating}(${reviews} Reviews)`}</span>
+                >{`${rating}(${reviews.length} Reviews)`}</span>
                 <div className={css.itemLocation}>
-                  <svg>
+                  <svg width={16} height={16}>
                     <use></use>
                   </svg>
                   <span>{location}</span>
@@ -50,39 +50,37 @@ const AdvertsList = ({ array }) => {
               <p className={css.itemDescription}>{description}</p>
               <ul className={css.itemDetails}>
                 <li className={css.itemDetail}>
-                  <svg>
+                  <svg width={20} height={20}>
                     <use></use>
                   </svg>
                   <span className={css.detail}>{adults} Adults</span>
                 </li>
                 <li className={css.itemDetail}>
-                  <svg>
+                  <svg width={20} height={20}>
                     <use></use>
                   </svg>
-                  <span className={css.detail}>
-                    {transmission} Transmission
-                  </span>
+                  <span className={css.detail}>{transmission}</span>
                 </li>
                 <li className={css.itemDetail}>
-                  <svg>
+                  <svg width={20} height={20}>
                     <use></use>
                   </svg>
-                  <span className={css.detail}>{engine} Engine</span>
+                  <span className={css.detail}>{engine}</span>
                 </li>
                 <li className={css.itemDetail}>
-                  <svg>
+                  <svg width={20} height={20}>
                     <use></use>
                   </svg>
                   <span className={css.detail}>Kitchen</span>
                 </li>
                 <li className={css.itemDetail}>
-                  <svg>
+                  <svg width={20} height={20}>
                     <use></use>
                   </svg>
                   <span className={css.detail}>{beds} Beds</span>
                 </li>
                 <li className={css.itemDetail}>
-                  <svg>
+                  <svg width={20} height={20}>
                     <use></use>
                   </svg>
                   <span className={css.detail}>AC</span>
