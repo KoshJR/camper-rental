@@ -27,6 +27,8 @@
 .itemTitle {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
 }
 
 .itemName {
@@ -34,11 +36,11 @@
   font-weight: 600;
   line-height: 1.25;
   color: var(--primary-color-black);
-  margin-bottom: 8px;
 }
 
 .itemPriceNBtn {
   display: flex;
+  align-items: center;
 }
 
 .itemPrice {
@@ -49,6 +51,20 @@
   color: var(--primary-color-black);
   margin-right: 11px;
 }
+
+.favoriteBtn {
+  background-color: transparent;
+}
+.favoriteSvg {
+  fill: transparent;
+  stroke: var(--primary-color-black);
+}
+
+.favoriteSvg:hover {
+  stroke: var(--primary-color-red);
+}
+
+
 
 .itemRating {
   display: flex;
@@ -105,6 +121,14 @@
   color: var(--primary-color-black);
 }
 
+.itemSvg {
+  stroke: var(--primary-color-black);
+}
+
+.itemSvgTrans {
+  fill: transparent;
+}
+
 .showMore {
   width: 166px;
   height: 56px;
@@ -118,4 +142,8 @@
   line-height: 1.5;
   letter-spacing: -0.01em;
   color: #fff;
+}
+
+.showMore:hover, .showMore:focus {
+  background-color: var(--secondary-color-red);
 }

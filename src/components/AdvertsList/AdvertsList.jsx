@@ -1,5 +1,7 @@
 import React from "react";
 import css from "./AdvertsList.module.css";
+import { icons } from "../../assets/index";
+import classNames from "classnames";
 
 const AdvertsList = ({ array }) => {
   return (
@@ -25,10 +27,10 @@ const AdvertsList = ({ array }) => {
               <div className={css.itemTitle}>
                 <p className={css.itemName}>{name}</p>
                 <div className={css.itemPriceNBtn}>
-                  <span className={css.itemPrice}>{price}</span>
+                  <span className={css.itemPrice}>&#8364;{price}.00</span>
                   <button className={css.favoriteBtn}>
-                    <svg width={30} height={30} className={css.favoriteSvg}>
-                      <use></use>
+                    <svg width={24} height={24} className={css.favoriteSvg}>
+                      <use href={`${icons}#icon-heart`}></use>
                     </svg>
                   </button>
                 </div>
@@ -51,37 +53,49 @@ const AdvertsList = ({ array }) => {
               <ul className={css.itemDetails}>
                 <li className={css.itemDetail}>
                   <svg width={20} height={20}>
-                    <use></use>
+                    <use href={`${icons}#icon-adults`}></use>
                   </svg>
                   <span className={css.detail}>{adults} Adults</span>
                 </li>
                 <li className={css.itemDetail}>
-                  <svg width={20} height={20}>
-                    <use></use>
+                  <svg
+                    width={20}
+                    height={20}
+                    className={classNames(css.itemSvg, css.itemSvgTrans)}
+                  >
+                    <use href={`${icons}#icon-transmission`}></use>
                   </svg>
                   <span className={css.detail}>{transmission}</span>
                 </li>
                 <li className={css.itemDetail}>
                   <svg width={20} height={20}>
-                    <use></use>
+                    <use href={`${icons}#icon-petrol`}></use>
                   </svg>
                   <span className={css.detail}>{engine}</span>
                 </li>
                 <li className={css.itemDetail}>
-                  <svg width={20} height={20}>
-                    <use></use>
+                  <svg
+                    width={20}
+                    height={20}
+                    className={classNames(css.itemSvg, css.itemSvgTrans)}
+                  >
+                    <use href={`${icons}#icon-kitchen`}></use>
                   </svg>
                   <span className={css.detail}>Kitchen</span>
                 </li>
                 <li className={css.itemDetail}>
-                  <svg width={20} height={20}>
-                    <use></use>
+                  <svg
+                    width={20}
+                    height={20}
+                    className={classNames(css.itemSvg, css.itemSvgTrans)}
+                  >
+                    <use href={`${icons}#icon-beds`}></use>
                   </svg>
                   <span className={css.detail}>{beds} Beds</span>
                 </li>
                 <li className={css.itemDetail}>
                   <svg width={20} height={20}>
-                    <use></use>
+                    <use href={`${icons}#icon-beds`}></use>
                   </svg>
                   <span className={css.detail}>AC</span>
                 </li>

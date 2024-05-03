@@ -38,7 +38,7 @@ const CatalogPage = () => {
         {isLoading && <Loader className={css.loader} />}
         {<AdvertsList array={advertsCatalog} />}
         {errorMessage && <h3>Wait a second, please ...</h3>}
-        <button onClick={handleLoadMore}>Load More</button>
+        <button onClick={handleLoadMore} className={css.loadMore}>Load More</button>
       </div>
     </div>
   );
