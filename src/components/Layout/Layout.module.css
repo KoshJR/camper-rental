@@ -2,5 +2,88 @@
   margin: 0 auto;
   max-width: 100%;
   width: 1440px;
-  background-color: red;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 50px;
+  margin: 0 auto;
+  padding-left: 50px;
+  padding-right: 50px;
+  background-color: var(--secondary-color-white);
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mainTitle {
+  margin-top: 25px;
+  font-size: 28px;
+}
+
+.homeMessage {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcomeText {
+  margin-top: 10px;
+  font-size: 24px;
+}
+
+.pLink {
+  text-decoration: none;
+  color: var(--primary-color-yellow);
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.pLink:hover {
+  font-weight: 500;
+  color: var(--primary-color-red);
+}
+
+.loader {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(top -50%, left -50%);
+  width: 80px;
+  height: 80px;
+}
+.loader:after {
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  margin: 8px;
+  box-sizing: border-box;
+  border: 32px solid #0138ff;
+  border-color: #0000fb transparent #0008fa transparent;
+  animation: loader 1.2s infinite;
+}
+
+.contentContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 64px;
+  padding: 100px 64px 0px 64px;
+}
+
+.queryForm {
+  width: 360px;
+}
+
+.advertsList {
+  width: 888px;
 }

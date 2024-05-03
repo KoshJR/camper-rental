@@ -1,0 +1,30 @@
+.listItem {
+  width: 888px;
+  display: flex;
+  border-radius: 20px;
+  border: solid 1px black;
+  padding: 24px;
+}
+
+.itemInfo {
+  padding: 0 24px 0 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cartTitle {
+  display: flex;
+  flex-direction: row;
+}
+.itemName {
+}
+
+.favoriteBtn {
+}
+
+.itemImg {
+  width: 290px;
+  height: 310px;
+  object-fit: cover;
+  border-radius: 10px;
+}

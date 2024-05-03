@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { getAllAdverts } from "../services/api";
 import AdvertsList from "../components/AdvertsList/AdvertsList";
+import { Loader } from '../components/Loader/Loader'
+import css from '../components/Layout/Layout.module.css'
 
 const CatalogPage = () => {
   const [advertsCatalog, setAdvertsCatalog] = useState([]);
@@ -30,9 +32,14 @@ const CatalogPage = () => {
   }
 
   return (
-    <div>
-      {<AdvertsList array={advertsCatalog} />}
-      <button onClick={handleLoadMore}>Load More</button>
+    <div className={css.contentContainer}>
+      <div className={css.queryForm}>Search Form</div>
+      <div className={css.advertsList}>
+        {isLoading && <Loader className={css.loader} />}
+        {<AdvertsList array={advertsCatalog} />}
+        {errorMessage && <h3>Wait a second, please ...</h3>}
+        <button onClick={handleLoadMore}>Load More</button>
+      </div>
     </div>
   );
 };

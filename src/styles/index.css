@@ -1,1 +1,65 @@
-@import url(./reset.css);
+:root {
+  --primary-color-white: #ffffff;
+  --primary-color-black: #101828;
+  --primary-color-grey: #475467;
+  --primary-color-red: #e44848;
+  --primary-color-yellow: #ffc531;
+  --secondary-color-white: #f2f4f7;
+
+}
+
+*,
+svg,
+::before,
+::after {
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  line-height: 1.5;
+  margin: 0 auto;
+  background-color: var(--primary-color-white);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+address {
+  font-style: normal;
+}

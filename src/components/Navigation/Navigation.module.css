@@ -1,0 +1,20 @@
+.navList {
+  display: flex;
+  gap: 20px;
+}
+
+.navLink {
+  list-style: none;
+  text-decoration: none;
+  font-size: 18px;
+  color: var(--primary-color-black);
+  border-radius: 10px;
+}
+.navLink:hover {
+  color: var(--primary-color-yellow);
+  font-weight: 500;
+}
+.active {
+  color: var(--primary-color-red);
+  font-weight: 500;
+}
