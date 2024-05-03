@@ -4,6 +4,9 @@ import { icons } from "../../assets/index";
 import classNames from "classnames";
 
 const AdvertsList = ({ array }) => {
+  
+
+
   return (
     <ul className={css.campList}>
       {array.map(
