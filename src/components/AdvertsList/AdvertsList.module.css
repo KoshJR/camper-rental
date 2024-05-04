@@ -66,12 +66,22 @@
   stroke: var(--primary-color-red);
 }
 
-
-
 .itemRating {
   display: flex;
   flex-direction: row;
   margin-bottom: 24px;
+  align-items: center;
+}
+
+.ratingSvg {
+  fill: var(--primary-color-yellow);
+  margin-right: 4px;
+}
+
+.svgLocation {
+  fill: transparent;
+  stroke: var(--primary-color-black);
+  margin-right: 4px;
 }
 
 .ratingNReviews {
@@ -146,6 +156,7 @@
   color: #fff;
 }
 
-.showMore:hover, .showMore:focus {
+.showMore:hover,
+.showMore:focus {
   background-color: var(--secondary-color-red);
 }

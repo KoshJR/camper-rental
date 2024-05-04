@@ -5,13 +5,27 @@ import { useDispatch, useSelector } from "react-redux";
 import classNames from "classnames";
 import { selectFavoritesAdverts } from "../../redux/adverts/selectors";
 import { addFavorite, removeFavorite } from "../../redux/adverts/advertsSlice";
+import ModalAdvert from "../Modal/Modal";
 
 const AdvertsList = ({ array }) => {
   const dispatch = useDispatch();
   const favorites = useSelector(selectFavoritesAdverts);
-  const [isFavorite, setIsFavorite] = useState(false);
-  const advertId = array.map((advert) => advert._id);
   const [favoritesState, setFavoritesState] = useState({});
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [selectedAdvert, setSelectedAdvert] = useState(null);
+
+  const openModal = (_id) => {
+    const advertDetails = array.find((advert) => advert._id === _id);
+    setSelectedAdvert(advertDetails);
+    setModalIsOpen(true);
+
+    document.body.style.overflow = "hidden";
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+    document.body.style.overflow = "auto";
+  };
 
   useEffect(() => {
     const newFavoritesState = array.reduce(
@@ -24,8 +38,6 @@ const AdvertsList = ({ array }) => {
     setFavoritesState(newFavoritesState);
   }, [favorites, array]);
 
- 
-
   const addToFavorite = (advertId) => {
     const advert = array.find((advert) => advert._id === advertId);
     if (!advert) return;
@@ -35,7 +47,6 @@ const AdvertsList = ({ array }) => {
     if (isAlreadyFavorite) {
       dispatch(removeFavorite(advertId));
     } else {
-      
       dispatch(addFavorite(advert));
     }
   };
@@ -82,14 +93,14 @@ const AdvertsList = ({ array }) => {
               </div>
               <div className={css.itemRating}>
                 <svg width={16} height={16} className={css.ratingSvg}>
-                  <use></use>
+                  <use href={`${icons}#icon-Rating`}></use>
                 </svg>
                 <span
                   className={css.ratingNReviews}
                 >{`${rating}(${reviews.length} Reviews)`}</span>
                 <div className={css.itemLocation}>
-                  <svg width={16} height={16}>
-                    <use></use>
+                  <svg width={16} height={16} className={css.svgLocation}>
+                    <use href={`${icons}#icon-map-pin`}></use>
                   </svg>
                   <span>{location}</span>
                 </div>
@@ -100,7 +111,7 @@ const AdvertsList = ({ array }) => {
                   <svg width={20} height={20}>
                     <use href={`${icons}#icon-adults`}></use>
                   </svg>
-                  <span className={css.detail}>{adults} Adults</span>
+                  <span className={css.detail}>{adults} adults</span>
                 </li>
                 <li className={css.itemDetail}>
                   <svg
@@ -126,7 +137,7 @@ const AdvertsList = ({ array }) => {
                   >
                     <use href={`${icons}#icon-kitchen`}></use>
                   </svg>
-                  <span className={css.detail}>Kitchen</span>
+                  <span className={css.detail}>kitchen</span>
                 </li>
                 <li className={css.itemDetail}>
                   <svg
@@ -136,16 +147,25 @@ const AdvertsList = ({ array }) => {
                   >
                     <use href={`${icons}#icon-beds`}></use>
                   </svg>
-                  <span className={css.detail}>{beds} Beds</span>
+                  <span className={css.detail}>{beds} beds</span>
                 </li>
                 <li className={css.itemDetail}>
                   <svg width={20} height={20}>
-                    <use href={`${icons}#icon-beds`}></use>
+                    <use href={`${icons}#icon-ac`}></use>
                   </svg>
-                  <span className={css.detail}>AC</span>
+                  <span className={css.detail}>ac</span>
                 </li>
               </ul>
-              <button className={css.showMore}>Show more</button>
+              <button onClick={() => openModal(_id)} className={css.showMore}>
+                Show more
+              </button>
+              {modalIsOpen && selectedAdvert?._id === _id && (
+                <ModalAdvert
+                  closeModal={closeModal}
+                  modalIsOpen={modalIsOpen}
+                  advert={selectedAdvert}
+                />
+              )}
             </div>
           </li>
         )

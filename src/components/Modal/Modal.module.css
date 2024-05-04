@@ -1,0 +1,134 @@
+.contentWrapper {
+  width: 982px;
+  position: relative;
+  padding: 40px 20px 44px 40px;
+  background-color: #fff;
+  border-radius: 20px;
+  max-height: 1288px;
+  overflow: hidden;
+}
+
+.btnClose {
+  position: absolute;
+  right: 40px;
+  top: 40px;
+  background-color: transparent;
+}
+
+.btnClose:hover > .svgClose {
+  stroke: var(--primary-color-red);
+  transition: stroke 250ms ease-in-out;
+}
+
+.svgClose {
+  stroke: var(--primary-color-black);
+}
+
+.title {
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.25;
+  color: var(--primary-color-black);
+  margin-bottom: 8px;
+}
+
+.svgStar {
+  fill: var(--primary-color-yellow);
+  margin-right: 4px;
+}
+
+.svgLocation {
+  fill: transparent;
+  stroke: var(--primary-color-black);
+  margin-right: 4px;
+}
+
+.ratingWrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.locationWrapper {
+  display: flex;
+  align-items: center;
+  margin-left: 16px;
+}
+
+.ratingText {
+  font-family: "Inter", sans-serif;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: var(--primary-color-black);
+}
+
+.price {
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.25;
+  color: var(--primary-color-black);
+  margin-bottom: 24px;
+}
+
+.wrapperScroll {
+  height: 406px;
+  overflow: auto;
+  width: 918px;
+}
+
+.imgList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-right: 16px;
+}
+
+.wrapperScroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.wrapperScroll::-webkit-scrollbar-thumb {
+  background: #d9d9d9;
+  border-radius: 7px;
+}
+
+.imgItem {
+  width: calc((100% - 32px) / 3);
+}
+
+.imgItem img {
+  object-fit: cover;
+  height: 310px;
+  width: 290px;
+}
+
+.description {
+  color: var(--primary-color-grey);
+  font-weight: 400;
+  width: 902px;
+  margin-bottom: 44px;
+}
+
+.tabWrapper {
+  display: flex;
+  gap: 40px;
+  margin-top: 44px;
+}
+
+.tabs {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--primary-color-black);
+  background-color: transparent;
+  padding-bottom: 24px;
+  border-bottom: 5px solid transparent;
+}
+
+.activeTab {
+  border-bottom: 5px solid var(--primary-color-red);
+}
