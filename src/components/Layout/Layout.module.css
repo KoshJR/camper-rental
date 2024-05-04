@@ -80,6 +80,12 @@
   padding: 50px 64px 100px 64px;
 }
 
+.contentFavContainer {
+  display: flex;
+  margin: 0 auto;
+  padding: 50px 264px 100px 264px;
+}
+
 .queryForm {
   width: 360px;
 }
