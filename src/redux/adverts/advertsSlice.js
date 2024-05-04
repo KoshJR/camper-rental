@@ -1,26 +1,37 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { getAllAdverts } from "./operations";
 
 const initialState = {
+    adverts: [],
     favorites: [],
-    filter: '',
+    page: 1,
 };
 
 const advertsSlice = createSlice({
-    name: 'adverts',
+  name: "adverts",
     initialState,
     reducers: {
         addFavorite(state, action) {
-            state.adverts = [...state.adverts, action.payload]
+            state.favorites.push(action.payload)
         },
         removeFavorite(state, action) {
-            state.adverts = state.adverts.filter((advert) => advert.id !== action.payload);
+            state.favorites = state.favorites.filter((advert) => advert._id !== action.payload)
         },
-        setFilter(state, action) {
-            state.filter = action.payload;
-        },
+        nextPage(state) {
+            state.page = state.page + 1;
+        }
+  },
+  
+    extraReducers: (builder) =>
+        builder.addCase(getAllAdverts.fulfilled, (state, { payload }) => {
+        if (state.page === 1) {
+            state.adverts = payload;
 
-    },
-})
+        } else {
+            state.adverts.push(...payload);
+      }
+  }),
+});
 
-export const { addFavorite, setFilter, removeFavorite } = advertsSlice.actions;
+export const { addFavorite, removeFavorite, nextPage } = advertsSlice.actions;
 export const advertsReducer = advertsSlice.reducer;

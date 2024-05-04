@@ -55,12 +55,14 @@
 .favoriteBtn {
   background-color: transparent;
 }
-.favoriteSvg {
+
+.notFavorite {
   fill: transparent;
   stroke: var(--primary-color-black);
 }
 
-.favoriteSvg:hover {
+.favoriteSvg {
+  fill: var(--primary-color-red);
   stroke: var(--primary-color-red);
 }
 

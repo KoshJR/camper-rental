@@ -1,11 +1,44 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import css from "./AdvertsList.module.css";
 import { icons } from "../../assets/index";
+import { useDispatch, useSelector } from "react-redux";
 import classNames from "classnames";
+import { selectFavoritesAdverts } from "../../redux/adverts/selectors";
+import { addFavorite, removeFavorite } from "../../redux/adverts/advertsSlice";
 
 const AdvertsList = ({ array }) => {
-  
+  const dispatch = useDispatch();
+  const favorites = useSelector(selectFavoritesAdverts);
+  const [isFavorite, setIsFavorite] = useState(false);
+  const advertId = array.map((advert) => advert._id);
+  const [favoritesState, setFavoritesState] = useState({});
 
+  useEffect(() => {
+    const newFavoritesState = array.reduce(
+      (acc, advert) => ({
+        ...acc,
+        [advert._id]: favorites.some((fav) => fav._id === advert._id),
+      }),
+      {}
+    );
+    setFavoritesState(newFavoritesState);
+  }, [favorites, array]);
+
+ 
+
+  const addToFavorite = (advertId) => {
+    const advert = array.find((advert) => advert._id === advertId);
+    if (!advert) return;
+
+    const isAlreadyFavorite = favorites.find((fav) => fav._id === advertId);
+
+    if (isAlreadyFavorite) {
+      dispatch(removeFavorite(advertId));
+    } else {
+      
+      dispatch(addFavorite(advert));
+    }
+  };
 
   return (
     <ul className={css.campList}>
@@ -31,8 +64,17 @@ const AdvertsList = ({ array }) => {
                 <p className={css.itemName}>{name}</p>
                 <div className={css.itemPriceNBtn}>
                   <span className={css.itemPrice}>&#8364;{price}.00</span>
-                  <button className={css.favoriteBtn}>
-                    <svg width={24} height={24} className={css.favoriteSvg}>
+                  <button
+                    onClick={() => addToFavorite(_id)}
+                    className={css.favoriteBtn}
+                  >
+                    <svg
+                      width={24}
+                      height={24}
+                      className={
+                        favoritesState[_id] ? css.favoriteSvg : css.notFavorite
+                      }
+                    >
                       <use href={`${icons}#icon-heart`}></use>
                     </svg>
                   </button>
