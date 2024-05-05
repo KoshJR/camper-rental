@@ -12,12 +12,12 @@ Modal.setAppElement("#root");
 const ModalAdvert = ({ modalIsOpen, closeModal, advert }) => {
   const customStyles = {
     content: {
-      top: "50%",
+      top: "40px",
       left: "50%",
       right: "auto",
       bottom: "auto",
-      marginRight: "-50%",
-      transform: "translate(-50%, -50%)",
+      margin: "0 auto",
+      transform: "translate(-50%)",
       padding: "0",
       borderRadius: "20px",
     },

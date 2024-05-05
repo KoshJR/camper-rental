@@ -116,6 +116,18 @@
   display: flex;
   gap: 40px;
   margin-top: 44px;
+  position: relative;
+}
+
+.tabWrapper::after {
+  position: absolute;
+  left: 0;
+  top: 48px;
+  content: "";
+  width: 98%;
+
+  height: 2px;
+  background-color: #10182833;
 }
 
 .tabs {

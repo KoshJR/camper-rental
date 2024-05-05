@@ -8,3 +8,45 @@
   margin-bottom: 30px;
   padding: 5px;
 }
+
+.svgDarkStar {
+  fill: var(--secondary-color-white);
+  margin-right: 4px;
+}
+
+.svgStar {
+  fill: var(--primary-color-yellow);
+  margin-right: 4px;
+}
+
+.reviewerLogo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--secondary-color-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 16px;
+  margin-bottom: 16px;
+}
+.reviewerBlock {
+  display: flex;
+  flex-direction: row;
+}
+
+.reviewerNameNStars {
+  display: flex;
+  flex-direction: column;
+}
+
+.reviewerComment {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+  color: var(--primary-color-grey);
+}
+
+.logoLetter {
+  color: var(--primary-color-red);
+}

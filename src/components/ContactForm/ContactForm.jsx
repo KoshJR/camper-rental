@@ -5,8 +5,6 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { icons } from "../../assets/index";
 
-
-
 const validationSchema = Yup.object().shape({
   name: Yup.string().required("Name is required"),
   email: Yup.string().email("Invalid email").required("Email is required"),
@@ -64,7 +62,7 @@ const ContactForm = () => {
                 className={css.error}
               />
             </div>
-            <div>
+            <div className={css.calendar}>
               <label htmlFor="bookingDate"></label>
               <Field name="bookingDate" className={css.date}>
                 {({ field, form }) => (

@@ -3,8 +3,6 @@ import css from "./Features.module.css";
 import { icons } from "../../assets/index";
 import ContactForm from "../ContactForm/ContactForm";
 
-
-
 const Features = ({ advert }) => {
   const {
     form,
@@ -24,7 +22,7 @@ const Features = ({ advert }) => {
             {adults && (
               <li key={nanoid()} className={css.details_item}>
                 <svg width={20} height={20} className={css.svg_details}>
-                  <use href={`${icons}#icon-users`}></use>
+                  <use href={`${icons}#icon-adults`}></use>
                 </svg>
                 <span className={css.details_text}>{adults} adults</span>
               </li>
@@ -69,7 +67,6 @@ const Features = ({ advert }) => {
           </ul>
         </div>
       </div>
-      
     </div>
   );
 };

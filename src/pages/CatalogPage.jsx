@@ -1,4 +1,4 @@
-import React, { useEffect} from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import AdvertsList from "../components/AdvertsList/AdvertsList";
 import { selectAdverts, selectPage } from "../redux/adverts/selectors";
@@ -23,7 +23,7 @@ const CatalogPage = () => {
 
   return (
     <div className={css.contentContainer}>
-      <div className={css.queryForm}>Search Form</div>
+      <div className={css.queryForm}></div>
       <div className={css.advertsList}>
         {<AdvertsList array={adverts} />}
         {page < maxOnPage && (

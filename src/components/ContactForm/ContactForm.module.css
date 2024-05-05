@@ -13,6 +13,10 @@
   margin-bottom: 8px;
 }
 
+.calendar {
+  width: 100%;
+}
+
 .subtitle {
   font-weight: 400;
   font-size: 16px;
@@ -26,12 +30,12 @@
 }
 
 .input {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   border-radius: 10px;
-  width: 100%;
+  width: 400px;
   height: 56px;
   padding-left: 18px;
-  background-color: var(--primary-color-light-white);
+  background-color: var(--secondary-color-white);
   border: none;
   line-height: 1.25;
   color: var(--primary-color-black);
@@ -43,14 +47,14 @@
 }
 
 .comment {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   padding-left: 18px;
   padding-top: 18px;
   width: 100%;
   height: 114px;
   resize: none;
   border-radius: 10px;
-  background-color: var(--primary-color-light-white);
+  background-color: var(--secondary-color-white);
   border: none;
   margin-bottom: 24px;
 }
@@ -64,7 +68,7 @@
   color: #fff;
   padding: 16px 60px;
   background-color: var(--primary-color-red);
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 500;
   letter-spacing: -0.01em;
 }
