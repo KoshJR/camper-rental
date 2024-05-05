@@ -1,5 +1,6 @@
 {
-  "name": "my-app",
+  "name": "camper-rental",
+  "homepage": "https://KoshJR.github.io/camper-rental/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
