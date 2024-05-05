@@ -11,9 +11,9 @@ export const App = () => {
   return (
     <Layout>
       <Routes>
-        <Route path='/' element={<HomePage />} />
-        <Route path='/catalog' element={<CatalogPage/> } />
-        <Route path='/favorites' element={<FavoritesPage/> } />
+        <Route path='camper-rental/' element={<HomePage />} />
+        <Route path='camper-rental/catalog' element={<CatalogPage/> } />
+        <Route path='camper-rental/favorites' element={<FavoritesPage/> } />
      </Routes>
     </Layout>
   )
