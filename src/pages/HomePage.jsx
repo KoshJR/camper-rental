@@ -8,7 +8,7 @@ const HomePage = () => {
       <p className={css.welcomeText}>
         <span>
           {" "}
-          <a className={css.pLink} href="/catalog">
+          <a className={css.pLink} href="camper-rental/catalog">
             Find your dream camp!
           </a>
         </span>{" "}
