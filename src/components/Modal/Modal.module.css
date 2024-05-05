@@ -132,3 +132,10 @@
 .activeTab {
   border-bottom: 5px solid var(--primary-color-red);
 }
+
+.infoWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  margin-top: 44px;
+}

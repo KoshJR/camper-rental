@@ -5,6 +5,8 @@ import { icons } from "../../assets/index";
 import { nanoid } from "nanoid";
 import classNames from "classnames";
 import Features from "../Features/Features";
+import Reviews from "../Reviews/Reviews";
+import ContactForm from "../ContactForm/ContactForm";
 Modal.setAppElement("#root");
 
 const ModalAdvert = ({ modalIsOpen, closeModal, advert }) => {
@@ -24,7 +26,7 @@ const ModalAdvert = ({ modalIsOpen, closeModal, advert }) => {
       overflow: "auto",
     },
   };
-  const [activeTab, setActiveTab] = useState(0);
+  const [activeTab, setActiveTab] = useState(1);
 
   const { name, rating, reviews, location, price, gallery, description } =
     advert;
@@ -73,6 +75,7 @@ const ModalAdvert = ({ modalIsOpen, closeModal, advert }) => {
             </ul>
             <p className={css.description}>{description}</p>
           </div>
+
           <div className={css.tabWrapper}>
             <button
               onClick={() => handleTabClick(1)}
@@ -93,7 +96,11 @@ const ModalAdvert = ({ modalIsOpen, closeModal, advert }) => {
               Reviews
             </button>
           </div>
-          {activeTab === 1 && <Features advert={advert} />}
+          <div className={css.infoWrapper}>
+            {activeTab === 1 && <Features advert={advert} />}
+            {activeTab === 2 && <Reviews advert={advert} />}
+            <ContactForm />
+          </div>
         </div>
       </Modal>
     </div>

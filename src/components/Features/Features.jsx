@@ -69,7 +69,7 @@ const Features = ({ advert }) => {
           </ul>
         </div>
       </div>
-      <ContactForm />
+      
     </div>
   );
 };
